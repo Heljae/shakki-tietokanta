@@ -9,6 +9,6 @@ Tavoitteenani on luoda tietokanta, jonne pystyy tallentamaan shakkipelejä ja jo
 - Käyttäjä pystyy selaamaan kaikkia tietokannassa olevia pelejä.
 - Pelit tallennetaan merkkijonona
 
-Mahdollinen kehitysidea
+## Mahdollisia kehitysideoita:
 - Käyttäjä pystyy selaamaan pelejä ilman kirjautumista sisään.
 - Kun käyttäjä kirjautuu sisään, hän pystyy tallentamaan pelejä yksityiseksi, jolloin vain hän pystyy näkemään ne.

@@ -1,5 +1,9 @@
 # shakki-tietokanta
 
+## Palautus 2
+- Sovellus aukeaa
+- Sovelluksella on tietokanta, mutta en ole onnistunut saamaan sinne vielä lisättyä mitään
+
 ## Miten sovellus tulee toimimaan?
 
 Tavoitteenani on luoda tietokanta, jonne pystyy tallentamaan shakkipelejä ja josta pystyy etsimään pelejä annettujen kriteerien avulla. Sovelluksessa tulee olemaan ainakin seuraavat ominaisuudet:  

@@ -19,4 +19,4 @@ def add():
     event = request.form["event"]
     date = request.form["date"]
     games.add_new_game(player1, player2, int(elo1), int(elo2), event, date)
-    return render_template("/")
+    return redirect("/")

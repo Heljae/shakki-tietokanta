@@ -1,4 +1,8 @@
 # shakki-tietokanta
+## Palautus 3
+- Tietokanta toimii!
+- Käyttäjä voi lisätä uuden pelin
+- Käyttäjä voi printata kaikki pelit, tosin ei vielä luettavassa muodossa
 
 ## Palautus 2
 - Sovellus aukeaa

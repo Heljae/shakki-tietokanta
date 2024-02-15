@@ -1,20 +1,19 @@
 from db import db
 from sqlalchemy.sql import text
-import handling_info
+import game_manager
 
 def add_new_game(player1, player2, elo1, elo2, event, date):
     """Adds a new game to the database
     """
-    # db.session.execute(text("INSERT INTO players (name,elo) \
-    #                         VALUES (:name, :elo);"),{"name":"jee","elo":1400})
-    # db.session.execute(text("INSERT INTO players (name,elo) \
-    #                         VALUES (:name, :elo);"),{"name":"moi","elo":1800})
 
-    if not handling_info.check_player(player1):
-        handling_info.add_player(player1, elo1)
+    if not game_manager.check_player(player1):
+        game_manager.add_player(player1, elo1)
 
-    if not handling_info.check_player(player2):
-        handling_info.add_player(player2, elo2)
+    if not game_manager.check_player(player2):
+        game_manager.add_player(player2, elo2)
+
+    if not game_manager.tournament_checker(event):
+        game_manager.add_event(event)
 
     player1_id = db.session.execute(text("SELECT id FROM players \
                                          WHERE name=:name;"), {"name":player1}).fetchone()[0]

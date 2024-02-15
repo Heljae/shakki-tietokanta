@@ -1,0 +1,7 @@
+<h1>Kaikki pelaajat</h1>
+<ul>
+    {% for player in players %}
+    {{ player[0] }}. {{ player[1] }} {{ player[2] }}
+    <br>
+    {% endfor %}
+</ul>

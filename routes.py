@@ -21,7 +21,12 @@ def add():
     games.add_new_game(player1, player2, int(elo1), int(elo2), event, date)
     return redirect("/")
 
-@app.route("/print")
+@app.route("/print_games")
 def print():
     all = games.get_all()
-    return render_template("print.html", items=all)
+    return render_template("print_games.html", items=all)
+
+@app.route("/list_players")
+def list_players():
+    all = games.get_players()
+    return render_template("list_players.html", players=all)

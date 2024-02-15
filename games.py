@@ -48,4 +48,14 @@ def get_all():
 
     return game_info
 
+def get_players():
+    """Returns a list of all the players
+    """
 
+    sql = text("SELECT name, elo FROM player SORT BY elo")
+    players = db.session.execute(sql)
+    db.session.commit()
+    all = []
+    for i in range(1, len(players)+1):
+        all.append([i]+players[i-1])
+    return all

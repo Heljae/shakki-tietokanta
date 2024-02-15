@@ -2,7 +2,8 @@
 ## Palautus 3
 - Tietokanta toimii!
 - Käyttäjä voi lisätä uuden pelin
-- Käyttäjä voi printata kaikki pelit, tosin ei vielä luettavassa muodossa
+- Käyttäjä voi printata kaikki pelit melko luettavassa muodossa
+- Käyttäjä pystyy listaamaan kaikki pelaajat
 
 ## Palautus 2
 - Sovellus aukeaa

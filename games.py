@@ -15,10 +15,8 @@ def add_new_game(player1, player2, elo1, elo2, event, date):
     if not game_manager.tournament_checker(event):
         game_manager.add_event(event)
 
-    player1_id = db.session.execute(text("SELECT id FROM players \
-                                         WHERE name=:name;"), {"name":player1}).fetchone()[0]
-    player2_id = db.session.execute(text("SELECT id FROM players \
-                                         WHERE name=:name;"), {"name":player2}).fetchone()[0]
+    player1_id = game_manager.get_player_id(player1)
+    player2_id = game_manager.get_player_id(player2)
 
     sql = text("INSERT INTO Games (player1_id, palyer2_id, elo1, elo2, event, date) \
                VALUES (:player1, :player2, :elo1, :elo2, :event, :date)")

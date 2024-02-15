@@ -34,3 +34,11 @@ def add_event(name):
 
     sql = text("INSERT INTO tournaments (name) VALUES (:name);")
     db.session.execute(sql, {"name":name})
+
+def get_player_id(name):
+    """Gets the player id for the given name
+    """
+
+    sql = text("SELECT id FROM players WHERE name=:name;")
+    id = db.session.execute(sql, {"name":name}).fetchone()[0]
+    return id

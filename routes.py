@@ -30,3 +30,8 @@ def print():
 def list_players():
     all = games.get_players()
     return render_template("list_players.html", players=all)
+
+@app.route("/user_info/<int:id>")
+def user_info(id):
+    info = games.player_info(id)
+    return render_template("user_info.html", player=info)

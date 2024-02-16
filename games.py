@@ -52,10 +52,18 @@ def get_players():
     """Returns a list of all the players
     """
 
-    sql = text("SELECT name, elo FROM players ORDER BY elo DESC")
+    sql = text("SELECT * FROM players ORDER BY elo DESC")
     players = list(db.session.execute(sql))
     db.session.commit()
     all = []
     for i in range(1, len(players)+1):
         all.append([i]+list(players[i-1]))
     return all
+
+def player_info(player_id):
+    """Gets the player info for a specific player
+    """
+
+    sql = text("SELECT * FROM players WHERE id=:id")
+    info = db.session.execute(sql, {"id":player_id}).fetchone()
+    return info

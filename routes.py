@@ -39,4 +39,6 @@ def user_info(id):
 @app.route("/game/<int:id>")
 def game(id):
     info = games.get_game(id)
-    return render_template("game.html", game=info)
+    game = info[0]
+    names = info[1]
+    return render_template("game.html", game=game, players=names)

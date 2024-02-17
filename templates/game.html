@@ -1,0 +1,15 @@
+<h1>{{ players[0].name }} - {{ players[0].name }}</h1>
+
+Valkeilla pelannut:<br>
+Nimi: <a href="/user_info/{{ players[0].id }}">{{ players[0].name }}</a><br>
+Vahvuusluku: {{ players[0].elo }}
+<br><br>
+Mustilla pelannut:<br>
+Nimi: <a href="/user_info/{{ players[1].id }}">{{ players[1].name }}</a><br>
+Vahvuusluku: {{ players[1].elo }}
+<br><br>
+<form>
+    <input type="button" onclick="window.location.href='/'" value="etusivulle" />
+</form>
+<br><br>
+Peli: (todo)

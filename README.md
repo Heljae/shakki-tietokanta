@@ -5,6 +5,7 @@
 - Käyttäjä voi printata kaikki pelit melko luettavassa muodossa
 - Käyttäjä pystyy listaamaan kaikki pelaajat
 - Jokaisella pelaajalla on nyt sivu, jossa näkyy pelaajan tiedot. Jokaisen pelaajan sivulle on linkki kun listaa pelaajat.
+- Jokaiselle pelille on nyt oma sivu, jossa näkyy pelin tiedot
 
 ## Palautus 2
 - Sovellus aukeaa

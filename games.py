@@ -30,21 +30,16 @@ def get_all():
     sql = text("SELECT * FROM games")
     games = db.session.execute(sql).fetchall()
 
-    game_info = []
+    game_info = {}
 
     for row in games:
-        game = list(row)
         sql2 = text("SELECT name FROM Players WHERE id=:id;")
-        name1 = db.session.execute(sql2, {"id":game[1]}).fetchone()[0]
-        game[1] = name1
+        name1 = db.session.execute(sql2, {"id":row.player1_id}).fetchone()[0]
 
         sql3 = text("SELECT name FROM Players WHERE id=:id;")
-        name2 = db.session.execute(sql3, {"id":game[2]}).fetchone()[0]
-        game[2] = name2
+        name2 = db.session.execute(sql3, {"id":row.palyer2_id}).fetchone()[0]
 
-        game_info.append(game)
-
-    db.session.commit()
+        game_info[row.id] = (row, [name1, name2])
 
     return game_info
 
@@ -67,3 +62,11 @@ def player_info(player_id):
     sql = text("SELECT * FROM players WHERE id=:id")
     info = db.session.execute(sql, {"id":player_id}).fetchone()
     return info
+
+def get_game(game_id):
+    """Gets all of certain game's info
+    """
+
+    sql = text("SELECT * FROM games WHERE id=:id;")
+    info = db.session.execute(sql, {"id":game_id})
+    return info.fetchone()

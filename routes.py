@@ -22,9 +22,9 @@ def add():
     return redirect("/")
 
 @app.route("/print_games")
-def print():
+def print_games():
     all = games.get_all()
-    return render_template("print_games.html", items=all)
+    return render_template("print_games.html", games=all)
 
 @app.route("/list_players")
 def list_players():
@@ -35,3 +35,8 @@ def list_players():
 def user_info(id):
     info = games.player_info(id)
     return render_template("user_info.html", player=info)
+
+@app.route("/game/<int:id>")
+def game(id):
+    info = games.get_game(id)
+    return render_template("game.html", game=info)

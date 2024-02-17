@@ -1,7 +1,7 @@
 <h1>Kaikki pelit</h1>
 <ul>
-{% for item in items %}
-{{ item[1] }} ({{ item[3] }}) - {{ item[2] }} ({{ item[4] }}), {{ item[5] }}, {{ item[6] }}
+{% for id, game in games.items() %}
+<a href="/game/{{ id }}">{{ game[1][0] }} ({{ game[0].elo1 }}) - {{ game[1][1] }} ({{ game[0].elo2 }})</a>, {{ game[0].event }}, {{ game[0].date }}
 <br>
 {% endfor %}
 </ul>

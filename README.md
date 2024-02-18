@@ -6,6 +6,7 @@
 - Käyttäjä pystyy listaamaan kaikki pelaajat
 - Jokaisella pelaajalla on nyt sivu, jossa näkyy pelaajan tiedot. Jokaisen pelaajan sivulle on linkki kun listaa pelaajat.
 - Jokaiselle pelille on nyt oma sivu, jossa näkyy pelin tiedot
+- Nyt peliä lisätessä käyttäjä voi kirjoittaa pelin siirrot ylös ja siirrot lisätään tietokantaan.
 
 ## Palautus 2
 - Sovellus aukeaa

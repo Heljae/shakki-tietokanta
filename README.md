@@ -1,4 +1,30 @@
 # shakki-tietokanta
+## Ohjeet sovelluksen käyttämiseen
+Lataa sovellus koneellesi git clone komennon avulla.  
+Luo sovelluksen juurikansioon .env niminen tiedosto. Kirjoita tiedostoon seuraava:  
+```
+DATABASE_URL=<tietokannan osoite>
+```
+Luo sovellukselle virtuaaliympäristö komennolla  
+```
+python3 -m venv venv
+```
+Siirry virtuaaliympäristöön.
+```
+source venv/bin/activate
+```
+Lataa sovellukseen vaadittavat riippuvuudet.
+```
+pip install -r ./requirements.txt
+```
+Päivitä sovelluksen tietokanta
+```
+psql < schema.sql
+```
+Käynnistä sovellus!!
+```
+flask run
+```
 ## Palautus 3
 - Tietokanta toimii!
 - Käyttäjä voi lisätä uuden pelin

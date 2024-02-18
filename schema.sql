@@ -25,6 +25,7 @@ CREATE TABLE clubs (
     name TEXT
 );
 CREATE TABLE moves (
+    id SERIAL PRIMARY KEY,
     game_id INTEGER REFERENCES games,
     pgn TEXT
 );

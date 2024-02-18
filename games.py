@@ -73,3 +73,29 @@ def get_game(game_id):
     player2 = player_info(info.palyer2_id)
     players = [player1, player2]
     return info, players
+
+def add_game_moves(moves):
+    """Adds moves of a game to the database
+    """
+    sql = text("INSERT INTO moves (pgn) VALUES (:moves);")
+    db.session.execute(sql, {"moves":moves})
+    db.session.commit()
+
+def get_game_id(moves):
+    """Gets game id based on moves.
+    """
+    sql = text("SELECT id FROM moves WHERE pgn=:pgn;")
+    game_id = db.session.execute(sql, {"pgn":str(moves)}).fetchone()[0]
+    return game_id
+
+def moves_to_db(id, player1, player2):
+    """Posts the moves to the db.
+    """
+    sql = text("SELECT id FROM games WHERE player1_id=:player1 AND palyer2_id=:player2")
+    id1 = game_manager.get_player_id(player1)
+    id2 = game_manager.get_player_id(player2)
+    game_id = db.session.execute(sql, {"player1":id1, "player2":id2}).fetchone()[0]
+
+    sql2 = text("UPDATE moves SET game_id=:game_id WHERE id=:id;")
+    db.session.execute(sql2, {"game_id":game_id, "id":id})
+    db.session.commit()

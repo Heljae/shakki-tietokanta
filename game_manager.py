@@ -33,7 +33,8 @@ def add_event(name):
     """
 
     sql = text("INSERT INTO tournaments (name) VALUES (:name);")
-    db.session.execute(sql, {"name":name})
+    db.session.execute(sql, {"name":str(name)})
+    db.session.commit()
 
 def get_player_id(name):
     """Gets the player id for the given name

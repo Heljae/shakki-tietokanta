@@ -25,6 +25,9 @@ Käynnistä sovellus!!
 ```
 flask run
 ```
+## Palautus n
+- Sovellus tulostaa nyt myös siirrot pelin omalla sivulla
+
 ## Palautus 3
 - Tietokanta toimii!
 - Käyttäjä voi lisätä uuden pelin

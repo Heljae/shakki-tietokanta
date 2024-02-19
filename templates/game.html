@@ -12,4 +12,10 @@ Vahvuusluku: {{ players[1].elo }}
     <input type="button" onclick="window.location.href='/'" value="etusivulle" />
 </form>
 <br><br>
-Peli: (todo)
+Peli:<br>
+<ul>
+    {% for move in moves %}
+    {{ move }}
+    <br>
+    {% endfor %}
+</ul>

@@ -42,7 +42,8 @@ def game(id):
     info = games.get_game(id)
     game = info[0]
     names = info[1]
-    return render_template("game.html", game=game, players=names)
+    moves = games.get_moves(id)
+    return render_template("game.html", game=game, players=names, moves=moves)
 
 @app.route("/add_moves")
 def add_moves():

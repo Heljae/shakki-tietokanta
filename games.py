@@ -99,3 +99,10 @@ def moves_to_db(id, player1, player2):
     sql2 = text("UPDATE moves SET game_id=:game_id WHERE id=:id;")
     db.session.execute(sql2, {"game_id":game_id, "id":id})
     db.session.commit()
+
+def get_moves(game_id):
+    """Gets the moves of a game from game_id
+    """
+    sql = text("SELECT pgn FROM moves WHERE game_id=:game_id")
+    moves = db.session.execute(sql, {"game_id":game_id}).fetchone()[0]
+    return game_manager.moves_to_list(moves)

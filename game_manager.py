@@ -43,3 +43,21 @@ def get_player_id(name):
     sql = text("SELECT id FROM players WHERE name=:name;")
     id = db.session.execute(sql, {"name":name}).fetchone()[0]
     return id
+
+def moves_to_list(moves:str):
+    """Turns a string of moves into a list
+    """
+    move_list = moves.split()
+    all = []
+    help = 0
+    new = ""
+    for move in move_list:
+        if help == 3:
+            all.append(new)
+            new = ""
+            help = 0
+        new += move+" "
+        help += 1
+    if new != "":
+        all.append(new)
+    return all

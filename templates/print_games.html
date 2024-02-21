@@ -1,4 +1,6 @@
-<h1>Kaikki pelit</h1>
+{% extends "layout.html" %}
+{% block title %}Kaikki pelit{% endblock %}
+{% block content %}
 <ul>
     {% for id, game in games.items() %}
     <a href="/game/{{ id }}">{{ game[1][0] }} ({{ game[0].elo1 }}) - 
@@ -9,3 +11,4 @@
 <form>
     <input type="button" onclick="window.location.href='/'" value="takaisin" />
 </form>
+{% endblock %}

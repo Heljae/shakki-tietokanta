@@ -1,4 +1,6 @@
-<h1>{{ players[0].name }} - {{ players[0].name }}</h1>
+{% extends "layout.html" %}
+{% block title %}{{ players[0].name }} - {{ players[0].name }}{% endblock %}
+{% block content %}
 Valkeilla pelannut:<br>
 Nimi: <a href="/user_info/{{ players[0].id }}">{{ players[0].name }}</a><br>
 Vahvuusluku: {{ players[0].elo }}
@@ -18,3 +20,4 @@ Peli:<br>
     <br>
     {% endfor %}
 </ul>
+{% endblock %}

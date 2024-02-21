@@ -1,4 +1,6 @@
-<h1>Tervetuloa käyttämään shakkitietokantaa!</h1>
+{% extends "layout.html" %}
+{% block title %}Tervetuloa käyttämään shakkitietokantaa!{% endblock %}
+{% block content %}
 <p>
   Tietokantaan pystyt tallentamaan shakkipelejä merkkijonoina. \
   Lisätietoja täältä (tähän tulee linkki :) ).
@@ -11,3 +13,4 @@
 <a href="/list_players">Tulostaa pelaajat elon mukaan</a>
 <br>
 <a href="/">Hae pelaaja nimellä (todo)</a>
+{% endblock %}

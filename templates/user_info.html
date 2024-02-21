@@ -1,4 +1,6 @@
-<h1>Pelaajan tiedot</h1>
+{% extends "layout.html" %}
+{% block title %}Pelaajan tiedot{% endblock %}
+{% block content %}
 <h2>{{ player.name }}</h2>
 Vahvuusluku: {{ player.elo }}
 <br>
@@ -14,3 +16,4 @@ todo
 <form>
     <input type="button" onclick="window.location.href='/'" value="etusivulle" />
 </form>
+{% endblock %}

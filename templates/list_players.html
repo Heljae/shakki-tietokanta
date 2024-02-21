@@ -1,4 +1,6 @@
-<h1>Kaikki pelaajat</h1>
+{% extends "layout.html" %}
+{% block title %}Kaikki pelaajat{% endblock %}
+{% block content %}
 <ul>
     {% for player in players %}
     {{ player[0] }}. <a href="/user_info/{{ player[1] }}">{{ player[2] }}</a> {{ player[3] }}
@@ -8,3 +10,4 @@
 <form>
     <input type="button" onclick="window.location.href='/'" value="takaisin" />
 </form>
+{% endblock %}

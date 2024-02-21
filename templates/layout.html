@@ -1,8 +1,13 @@
 <!doctype html>
-<title>Shakkitietokanta {% block title %}{%  endblock %}</title>
-<h1>Shakkitietokanta</h1>
-<a href="/">Etusivu</a>
-<a href="/print_games">Kaikki pelit</a>
-<a href="/list_players">Kaikki pelaajat</a>
-<hr>
-{% block content %}{% endblock %}
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>Shakkitietokanta {% block title %}{%  endblock %}</title>
+  </head>
+  <h1 class="title_style">Shakkitietokanta</h1>
+  <a href="/">Etusivu</a>
+  <a href="/print_games">Kaikki pelit</a>
+  <a href="/list_players">Kaikki pelaajat</a>
+  <hr>
+  {% block content %}{% endblock %}
+</html>

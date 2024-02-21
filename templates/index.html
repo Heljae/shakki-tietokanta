@@ -1,16 +1,17 @@
 {% extends "layout.html" %}
 {% block title %}Tervetuloa käyttämään shakkitietokantaa!{% endblock %}
 {% block content %}
-<p>
-  Tietokantaan pystyt tallentamaan shakkipelejä merkkijonoina. \
-  Lisätietoja täältä (tähän tulee linkki :) ).
-</p>
-<hr>
-<a href="/add_moves">Lisää uusi peli</a>
-<br>
-<a href="/print_games">Näytä kaikki pelit</a>
-<br>
-<a href="/list_players">Tulostaa pelaajat elon mukaan</a>
-<br>
-<a href="/">Hae pelaaja nimellä (todo)</a>
+<body>
+  <p>
+    Tietokantaan pystyt tallentamaan shakkipelejä merkkijonoina. 
+    Lisätietoja täältä (tähän tulee linkki :) ).
+  </p>
+  <a href="/add_moves">Lisää uusi peli</a>
+  <br>
+  <a href="/print_games">Näytä kaikki pelit</a>
+  <br>
+  <a href="/list_players">Tulostaa pelaajat elon mukaan</a>
+  <br>
+  <a href="/">Hae pelaaja nimellä (todo)</a>
+</body>
 {% endblock %}

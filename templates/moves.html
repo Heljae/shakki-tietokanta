@@ -1,20 +1,22 @@
 {% extends "layout.html" %}
 {% block title %}Uusi peli{% endblock %}
 {% block content %}
-<p>
+<body>
+  <p>
     Kirjoita siirrot ylös pgn (portable game notation) tiedostomuodossa.<br><br>
     Voit käyttää siirtojen kirjoittamiseen jotakin sovellusta, esimerkiksi<br>
     <a href="https://lichess.org/analysis">Lichess</a> sivustolla pystyt tekemään siirrot laudalla 
     ja kopioimaan siirrot laudan alta kohdasta pgn.
-</p>
-<br><br>
-Pelin siirrot:
-<br>
-<form action="/post_moves" method="post">
+  </p>
+  <br><br>
+  Pelin siirrot:
+  <br>
+  <form action="/post_moves" method="post" class="moves">
     <textarea name="moves" rows="5" cols="70"></textarea>
     <p>
     <input type="submit" value="Lähetä">
-</form>
+  </form>
+</body>
 {% endblock %}
 
 

@@ -1,0 +1,21 @@
+body {
+    padding: 7px 5px 50px;
+    max-width: 50em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    padding: 1em 1em;
+    color: #464646;
+}
+.title_style {
+    padding-top: 10px;
+    padding-left: 50px;
+    color: #181818;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.moves {
+    padding-left: 70px;
+    max-width: 50em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1;
+    color: #464646;
+}

@@ -1,14 +1,16 @@
 {% extends "layout.html" %}
 {% block title %}Kaikki pelit{% endblock %}
 {% block content %}
-<ul>
+<body>
+  <ul>
     {% for id, game in games.items() %}
     <a href="/game/{{ id }}">{{ game[1][0] }} ({{ game[0].elo1 }}) - 
     {{ game[1][1] }} ({{ game[0].elo2 }})</a>, {{ game[0].event }}, {{ game[0].date }}
-<br>
-{% endfor %}
-</ul>
-<form>
+  <br>
+  {% endfor %}
+  </ul>
+  <form>
     <input type="button" onclick="window.location.href='/'" value="takaisin" />
-</form>
+  </form>
+</body>
 {% endblock %}

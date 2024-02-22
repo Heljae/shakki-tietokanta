@@ -1,13 +1,17 @@
 <!doctype html>
 <html>
   <head>
-    <link rel="stylesheet" href="style.css">
-    <title>Shakkitietokanta {% block title %}{%  endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title style="text-align:center;">Shakkitietokanta</title>
   </head>
-  <h1 class="title_style">Shakkitietokanta</h1>
-  <a href="/">Etusivu</a>
-  <a href="/print_games">Kaikki pelit</a>
-  <a href="/list_players">Kaikki pelaajat</a>
+  <p style="text-align: center;">
+    <h1 class="title_style">Shakkitietokanta</h1>
+    <div style="text-align: center;">
+      <a href="/">Etusivu</a>
+      <a href="/print_games">Kaikki pelit</a>
+      <a href="/list_players">Kaikki pelaajat</a>
+    </div>
+  </p>
   <hr>
   {% block content %}{% endblock %}
 </html>

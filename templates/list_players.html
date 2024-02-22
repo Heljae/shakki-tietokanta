@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
-{% block title %}Kaikki pelaajat{% endblock %}
 {% block content %}
 <body>
+  <h2>Kaikki pelaajat</h2>
   <ul>
     {% for player in players %}
     {{ player[0] }}. <a href="/user_info/{{ player[1] }}">{{ player[2] }}</a> {{ player[3] }}

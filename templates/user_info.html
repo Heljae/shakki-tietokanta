@@ -1,8 +1,7 @@
 {% extends "layout.html" %}
-{% block title %}Pelaajan tiedot{% endblock %}
 {% block content %}
 <body>
-  <h2>{{ player.name }}</h2>
+  <h2 class="title_style">{{ player.name }}</h2>
   Vahvuusluku: {{ player.elo }}
   <br>
   Kerho: {{ player.club }}

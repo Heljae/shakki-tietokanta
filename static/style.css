@@ -1,19 +1,22 @@
 body {
-    padding: 7px 5px 50px;
+    margin: 0 auto;
     max-width: 50em;
+    font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    padding: 1em 1em;
+    padding: 4em 1em;
     color: #464646;
 }
 .title_style {
-    padding-top: 10px;
-    padding-left: 50px;
-    color: #181818;
+    margin-top: 1em;
+    padding-top: 1em;
+    color: #2e2e2e;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 28;
+    text-align: center;
 }
 .moves {
-    padding-left: 70px;
+    margin: 0 auto;
     max-width: 50em;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1;

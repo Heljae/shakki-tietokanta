@@ -1,13 +1,17 @@
 {% extends "layout.html" %}
-{% block title %}{{ players[0].name }} - {{ players[0].name }}{% endblock %}
 {% block content %}
 <body>
-  Valkeilla pelannut:<br>
-  Nimi: <a href="/user_info/{{ players[0].id }}">{{ players[0].name }}</a><br>
+  <h2>{{ players[0].name }} - {{ players[0].name }}</h2> 
+  Valkeilla pelannut:
+  <br>
+  Nimi: <a href="/user_info/{{ players[0].id }}">{{ players[0].name }}</a>
+  <br>
   Vahvuusluku: {{ players[0].elo }}
   <br><br>
-  Mustilla pelannut:<br>
-  Nimi: <a href="/user_info/{{ players[1].id }}">{{ players[1].name }}</a><br>
+  Mustilla pelannut:
+  <br>
+  Nimi: <a href="/user_info/{{ players[1].id }}">{{ players[1].name }}</a>
+  <br>
   Vahvuusluku: {{ players[1].elo }}
   <br><br>
   <form>

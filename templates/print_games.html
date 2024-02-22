@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
-{% block title %}Kaikki pelit{% endblock %}
 {% block content %}
 <body>
+  <h2>Kaikki pelit</h2> 
   <ul>
     {% for id, game in games.items() %}
     <a href="/game/{{ id }}">{{ game[1][0] }} ({{ game[0].elo1 }}) - 

@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+{% block content %}
 <body>
   <form action="/add/{{ game_id }}" method="post">
     Valkeilla pelannut pelaaja: <input type="text" name="player1">
@@ -15,3 +17,4 @@
     <input type="submit" value="Lähetä">
   </form>
 </body>
+{% endblock %}

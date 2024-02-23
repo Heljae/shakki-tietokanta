@@ -18,7 +18,7 @@ def add_new_game(player1, player2, elo1, elo2, event, date):
     player1_id = game_manager.get_player_id(player1)
     player2_id = game_manager.get_player_id(player2)
 
-    sql = text("INSERT INTO Games (player1_id, palyer2_id, elo1, elo2, event, date) \
+    sql = text("INSERT INTO Games (player1_id, player2_id, elo1, elo2, event, date) \
                VALUES (:player1, :player2, :elo1, :elo2, :event, :date)")
     
     db.session.execute(sql, {"player1":player1_id, "player2":player2_id,
@@ -37,7 +37,7 @@ def get_all():
         name1 = db.session.execute(sql2, {"id":row.player1_id}).fetchone()[0]
 
         sql3 = text("SELECT name FROM Players WHERE id=:id;")
-        name2 = db.session.execute(sql3, {"id":row.palyer2_id}).fetchone()[0]
+        name2 = db.session.execute(sql3, {"id":row.player2_id}).fetchone()[0]
 
         game_info[row.id] = (row, [name1, name2])
 
@@ -91,7 +91,7 @@ def get_game_id(moves):
 def moves_to_db(id, player1, player2):
     """Posts the moves to the db.
     """
-    sql = text("SELECT id FROM games WHERE player1_id=:player1 AND palyer2_id=:player2")
+    sql = text("SELECT id FROM games WHERE player1_id=:player1 AND player2_id=:player2")
     id1 = game_manager.get_player_id(player1)
     id2 = game_manager.get_player_id(player2)
     game_id = db.session.execute(sql, {"player1":id1, "player2":id2}).fetchone()[0]
@@ -106,3 +106,14 @@ def get_moves(game_id):
     sql = text("SELECT pgn FROM moves WHERE game_id=:game_id")
     moves = db.session.execute(sql, {"game_id":game_id}).fetchone()[0]
     return game_manager.moves_to_list(moves)
+
+def count_games(player_id):
+    """Counts all of the games from the given player
+    """
+
+    sql = text("SELECT COUNT(*) FROM games \
+               WHERE player1_id=:player1_id OR player2_id=:player2_id")
+    count = db.session.execute(sql, {"player1_id":player_id, \
+                                     "player2_id":player_id}).fetchone()
+
+    return count[0]

@@ -35,7 +35,8 @@ def list_players():
 @app.route("/user_info/<int:id>")
 def user_info(id):
     info = games.player_info(id)
-    return render_template("user_info.html", player=info)
+    total_games = games.count_games(id)
+    return render_template("user_info.html", player=info, games=total_games)
 
 @app.route("/game/<int:id>")
 def game(id):

@@ -70,7 +70,7 @@ def get_game(game_id):
     sql = text("SELECT * FROM games WHERE id=:id;")
     info = db.session.execute(sql, {"id":game_id}).fetchone()
     player1 = player_info(info.player1_id)
-    player2 = player_info(info.palyer2_id)
+    player2 = player_info(info.player2_id)
     players = [player1, player2]
     return info, players
 

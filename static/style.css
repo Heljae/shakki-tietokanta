@@ -22,3 +22,10 @@ body {
     line-height: 1;
     color: #464646;
 }
+.text_area{
+    width: 12em;
+    height: 6em;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    display: inline-block;
+}

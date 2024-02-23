@@ -1,29 +1,32 @@
 {% extends "layout.html" %}
 {% block content %}
-<body>
-  <h2>{{ players[0].name }} - {{ players[0].name }}</h2> 
-  Valkeilla pelannut:
+<body class="text">
+  <h2 style="text-align: center;">{{ players[0].name }} - {{ players[0].name }}</h2>
+  <div style="text-align: center;" style="margin: 1rem;" style="padding: 2rem 2rem;">
+    <div class="text_area">
+      Valkeilla pelannut:
+      <br>
+      Nimi: <a href="/user_info/{{ players[0].id }}">{{ players[0].name }}</a>
+      <br>
+      Vahvuusluku: {{ players[0].elo }}
+    </div>
+    <div class="text_area">
+      Mustilla pelannut:
+      <br>
+      Nimi: <a href="/user_info/{{ players[1].id }}">{{ players[1].name }}</a>
+      <br>
+      Vahvuusluku: {{ players[1].elo }}
+    </div>
+  </div>
   <br>
-  Nimi: <a href="/user_info/{{ players[0].id }}">{{ players[0].name }}</a>
-  <br>
-  Vahvuusluku: {{ players[0].elo }}
-  <br><br>
-  Mustilla pelannut:
-  <br>
-  Nimi: <a href="/user_info/{{ players[1].id }}">{{ players[1].name }}</a>
-  <br>
-  Vahvuusluku: {{ players[1].elo }}
-  <br><br>
-  <form>
-    <input type="button" onclick="window.location.href='/'" value="etusivulle" />
-  </form>
-  <br><br>
-  Peli:<br>
-  <ul>
-    {% for move in moves %}
-    {{ move }}
-    <br>
-    {% endfor %}
-  </ul>
+  <div style="text-align: center;">
+    Peli:<br>
+    <ul>
+      {% for move in moves %}
+      {{ move }}
+      <br>
+      {% endfor %}
+    </ul>
+  </div>
 </body>
 {% endblock %}

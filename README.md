@@ -27,6 +27,7 @@ flask run
 ```
 ## Palautus n
 - Sovellus tulostaa nyt myös siirrot pelin omalla sivulla
+- Sovellus näyttää pelaajan tiedoissa kaikkien pelattujen pelien määrän
 
 ## Palautus 3
 - Tietokanta toimii!

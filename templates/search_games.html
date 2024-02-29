@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+  <form action="/find_games" method="post">
+    Pelaajan nimi: 
+    <br>
+    <input type="text" name="name">
+  </form>
+</body>
+{% endblock %}

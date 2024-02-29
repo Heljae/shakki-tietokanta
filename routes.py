@@ -56,3 +56,12 @@ def post_moves():
     games.add_game_moves(moves)
     game_id = games.get_game_id(moves)
     return render_template("new.html", game_id=game_id)
+
+@app.route("/find_games", methods=["GET","POST"])
+def find_player():
+    if request.method == "GET":
+        return render_template("search_games.html")
+    if request.method == "POST":
+        name = request.form["name"]
+        player_id = games.find_player(name)
+        return redirect(f"/user_info/{player_id}")

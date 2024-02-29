@@ -117,3 +117,9 @@ def count_games(player_id):
                                      "player2_id":player_id}).fetchone()
 
     return count[0]
+
+def find_player(name):
+    """Finds the info of a player by name
+    """
+    player_id = game_manager.get_player_id(name)
+    return player_id

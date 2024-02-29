@@ -34,6 +34,21 @@ body {
     height: 6em;
     margin-left: 10%;
     margin-right: 10%;
-    vertical-align: middle;
-    display: inline-block;  
+    vertical-align: left;
+    display: inline-block;
+    text-align: left;  
+}
+.topbar {
+    background: #e4b0b7;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.topbar a {
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #3a3a3a;
+}
+.topbar a:hover {
+    background-color: #f4d9dc;
 }

@@ -2,16 +2,19 @@
 <html>
   <head>
     <link rel="stylesheet" href="/static/style.css">
-    <title style="text-align:center;">Shakkitietokanta</title>
+    <title>Shakkitietokanta</title>
   </head>
-  <p style="text-align: center;">
-    <h1 class="title_style">Shakkitietokanta</h1>
-    <div style="text-align: center;">
-      <a href="/">Etusivu</a>
-      <a href="/print_games">Kaikki pelit</a>
-      <a href="/list_players">Kaikki pelaajat</a>
+    <div class="topbar">
+      <p>
+        <h1 class="title_style">Shakkitietokanta</h1>
+        <div style="text-align: center;">
+          <a href="/" style="text-decoration: none;">Etusivu</a>
+          <a href="/print_games" style="text-decoration: none;">Kaikki pelit</a>
+          <a href="/list_players" style="text-decoration: none;">Kaikki pelaajat</a>
+        </div>
+      </p>
     </div>
-  </p>
-  <hr>
-  {% block content %}{% endblock %}
+    <hr>
+    {% block content %}{% endblock %}
+  </div>
 </html>

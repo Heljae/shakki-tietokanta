@@ -2,19 +2,25 @@
 {% block content %}
 <body>
   <h2 class="title_style">{{ player.name }}</h2>
-  Vahvuusluku: {{ player.elo }} <div style="margin-left: auto;">Pelejä yhteensä: {{ games }}</div>
-  <br>
-  Kerho: {{ player.club }}
-  <br>
-  <br>
-  Pelit: 
-  todo
-  <br><br>
-  <form>
-    <input type="button" onclick="window.location.href='/'" value="muokkaa tietoja" /> (todo)
-  </form>
-  <form>
-    <input type="button" onclick="window.location.href='/'" value="etusivulle" />
-  </form>
+  <div style="text-align: center;" style="margin: 1rem;" style="padding: 2rem 2rem;">
+    <div class="large_text_area">
+      Vahvuusluku: {{ player.elo }}
+      <br>
+      Kerho: {{ player.club }}
+    </div>
+    <div class="large_text_area">
+      <div style="margin-left: auto;">Pelejä yhteensä: {{ games }}</div>
+      <br>
+    </div>
+  </div>
+      Pelit: 
+      todo
+      <br><br>
+      <form>
+        <input type="button" onclick="window.location.href='/'" value="muokkaa tietoja" /> (todo)
+      </form>
+      <form>
+        <input type="button" onclick="window.location.href='/'" value="etusivulle" />
+      </form>
 </body>
 {% endblock %}

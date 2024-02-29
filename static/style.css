@@ -29,3 +29,11 @@ body {
     vertical-align: middle;
     display: inline-block;
 }
+.large_text_area{
+    width: 12em;
+    height: 6em;
+    margin-left: 10%;
+    margin-right: 10%;
+    vertical-align: middle;
+    display: inline-block;  
+}

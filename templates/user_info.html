@@ -9,16 +9,19 @@
       Kerho: {{ player.club }}
     </div>
     <div class="large_text_area">
-      <div style="margin-left: auto;">Pelejä yhteensä: {{ games }}</div>
+      <div style="margin-left: auto;">Pelejä yhteensä: {{ total }}</div>
       <br>
     </div>
   </div>
       Pelit: 
-      todo
-      <br><br>
-      <form>
-        <input type="button" onclick="window.location.href='/'" value="muokkaa tietoja" /> (todo)
-      </form>
+      <br>
+      <ol>
+      {% for game in games %}
+        <li>{{ game["player1"] }} ({{ game["elo1"] }}) - {{ game["player2"] }} ({{ game["elo2"] }}), 
+          {{ game["event"] }}, {{ game["date"] }}
+        </li>
+      {% endfor %}
+      </ol>
       <form>
         <input type="button" onclick="window.location.href='/'" value="etusivulle" />
       </form>

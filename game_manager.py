@@ -61,3 +61,29 @@ def moves_to_list(moves:str):
     if new != "":
         all.append(new)
     return all
+
+def player_info(player_id):
+    sql = text("SELECT * FROM players WHERE id=:id")
+    info = db.session.execute(sql, {"id":player_id}).fetchone()
+    return info
+
+def get_games_info(player_id):
+    """Gets the info of all the games of a player
+    """
+    sql2 = text("SELECT * FROM games WHERE player1_id=:player_id \
+               OR player2_id=:player_id")
+    games = db.session.execute(sql2, {"player_id":player_id}).fetchall()
+    total = []
+    for game in games:
+        game_info = {}
+        player1 = player_info(game.player1_id)
+        player2 = player_info(game.player2_id)
+        game_info["player1"] = player1.name
+        game_info["player2"] = player2.name
+        game_info["elo1"] = game.elo1
+        game_info["elo2"] = game.elo2
+        game_info["event"] = game.event
+        game_info["date"] = game.date
+        total.append(game_info)
+    return total
+

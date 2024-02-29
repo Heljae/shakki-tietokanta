@@ -61,6 +61,7 @@ def player_info(player_id):
 
     sql = text("SELECT * FROM players WHERE id=:id")
     info = db.session.execute(sql, {"id":player_id}).fetchone()
+
     return info
 
 def get_game(game_id):
@@ -123,3 +124,9 @@ def find_player(name):
     """
     player_id = game_manager.get_player_id(name)
     return player_id
+
+def get_player_games(player_id):
+    """Gets all of a players games
+    """
+    games = game_manager.get_games_info(player_id)
+    return games

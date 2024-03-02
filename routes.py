@@ -14,7 +14,7 @@ def new(id):
 def add(id):
     player1 = request.form["player1"]
     player2 = request.form["player2"]
-    elo1 = request.form["elo1"]  # elo (rating) during game
+    elo1 = request.form["elo1"]
     elo2 = request.form["elo2"]
     event = request.form["event"]
     date = request.form["date"]
@@ -46,10 +46,10 @@ def game(id):
     game = info[0]
     names = info[1]
     moves = games.get_moves(id)
-    if moves == "NULL":
+    if moves == None:
         message = "Valitulla pelillä ei ole siirtoja"
         return render_template("error.html", message=message)
-    if info == "NULL":
+    if info == None:
         message = "Peliä ei ole olemassa"
         return render_template("error.html", message=message)
     return render_template("game.html", game=game, players=names, moves=moves)
@@ -75,7 +75,7 @@ def find_player():
     if request.method == "POST":
         name = request.form["name"]
         player_id = games.find_player(name)
-        if player_id != "Null":
+        if player_id != None:
             return redirect(f"/user_info/{player_id}")
         else:
             message = "Pelaajaa ei löytynyt"

@@ -46,6 +46,12 @@ def game(id):
     game = info[0]
     names = info[1]
     moves = games.get_moves(id)
+    if moves == "NULL":
+        message = "Valitulla pelillä ei ole siirtoja"
+        return render_template("error.html", message=message)
+    if info == "NULL":
+        message = "Peliä ei ole olemassa"
+        return render_template("error.html", message=message)
     return render_template("game.html", game=game, players=names, moves=moves)
 
 @app.route("/add_moves")
@@ -57,6 +63,9 @@ def post_moves():
     moves = request.form["moves"]
     games.add_game_moves(moves)
     game_id = games.get_game_id(moves)
+    if moves == "":
+        message = "Pelillä täytyy olla siirrot!"
+        return render_template("error.html", message=message)
     return render_template("new.html", game_id=game_id)
 
 @app.route("/find_games", methods=["GET","POST"])
@@ -66,4 +75,8 @@ def find_player():
     if request.method == "POST":
         name = request.form["name"]
         player_id = games.find_player(name)
-        return redirect(f"/user_info/{player_id}")
+        if player_id != "Null":
+            return redirect(f"/user_info/{player_id}")
+        else:
+            message = "Pelaajaa ei löytynyt"
+            return render_template("error.html", message=message)

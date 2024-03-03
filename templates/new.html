@@ -18,6 +18,7 @@
     Päivämäärä: <input type="date" name="date" required>
     <p>
     <input type="submit" value="Lähetä">
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
   </form>
 </body>
 {% endblock %}

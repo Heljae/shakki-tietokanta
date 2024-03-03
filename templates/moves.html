@@ -12,6 +12,7 @@
   <br>
   <form action="/post_moves" method="post" class="moves">
     <textarea name="moves" rows="5" cols="70" required></textarea>
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
     <p>
     <input type="submit" value="Lähetä">
     <input type="button" onclick="window.location.href='/'" value="takaisin">

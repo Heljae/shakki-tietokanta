@@ -1,6 +1,7 @@
 from db import db
 from sqlalchemy.sql import text
 import game_manager
+import secrets
 
 def add_new_game(player1, player2, elo1, elo2, event, date):
     """Adds a new game to the database
@@ -146,3 +147,6 @@ def count_all():
                 FROM players")
     average = db.session.execute(sql3).fetchone()[0]
     return games, players, average
+
+def csrf_token():
+    db.session["csrf"] = secrets.token_hex(16)

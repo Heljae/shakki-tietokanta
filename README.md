@@ -25,6 +25,15 @@ Käynnistä sovellus!!
 ```
 flask run
 ```
+## Loppupalautus
+Sovelluksella on seuraavat ominaisuudet:
+- Käyttäjä  pystyy lisäämään pelin
+- Käyttäjä pystyy selaamaan pelejä
+- Käyttäjä pystyy katsomaan yksittäisen pelin tiedot
+- Käyttäjä pystyy selaamaan pelaajia
+- Käyttäjä pystyy katsomaan yksittäisen pelaajan tiedot
+- Käyttäjä pystyy hakemaan pelaajaa nimellä
+
 ## Palautus n
 - Sovellus tulostaa nyt myös siirrot pelin omalla sivulla
 - Sovellus näyttää pelaajan tiedoissa kaikkien pelattujen pelien määrän

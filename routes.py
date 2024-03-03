@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, redirect
-import games, games_to_db
+import games
 
 @app.route("/")
 def index():
@@ -21,6 +21,9 @@ def add(id):
     elo2 = request.form["elo2"]
     event = request.form["event"]
     date = request.form["date"]
+    token = games.csrf_token()
+    if token != request.form["csrf_token"]:
+        render_template("error.html", message="virhe tiedon lähetyksessä")
     games.add_new_game(player1, player2, int(elo1), int(elo2), event, date)
     games.moves_to_db(id, player1, player2)
     return redirect("/")
@@ -64,6 +67,9 @@ def add_moves():
 @app.route("/post_moves", methods=["POST"])
 def post_moves():
     moves = request.form["moves"]
+    token = games.csrf_token()
+    if token != request.form["csrf_token"]:
+        render_template("error.html", message="virhe tiedon lähetyksessä")
     games.add_game_moves(moves)
     game_id = games.get_game_id(moves)
     if moves == "":
@@ -77,6 +83,9 @@ def find_player():
         return render_template("search_games.html")
     if request.method == "POST":
         name = request.form["name"]
+        token = games.csrf_token()
+        if token != request.form["csrf_token"]:
+            render_template("error.html", message="virhe tiedon lähetyksessä")
         player_id = games.find_player(name)
         if player_id != None:
             return redirect(f"/user_info/{player_id}")

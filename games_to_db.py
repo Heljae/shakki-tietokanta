@@ -1,4 +1,3 @@
-import games
 from db import db
 from sqlalchemy.sql import text
 
@@ -11,11 +10,13 @@ def add_existing_games():
     event = "Carlsen Tour Final"
     date = "2020-08-19"
 
+    db.session.execute("INSERT INTO moves (elo) VALUES (:pgn)", {"pgn":pgn})
+
     sql = text("SELECT id FROM games WHERE elo1=:elo1 AND elo2=elo2")
     game_id = db.session.execute(sql, {"elo1":elo1, "elo2":elo2})
 
-    games.moves_to_db(game_id, player1, player2)
-    games.add_new_game(player1, player2, elo1, elo2, event, date)
+    moves_to_db(game_id, player1, player2)
+    add_new_game(player1, player2, elo1, elo2, event, date)
 
     pgn1 = "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. f3 e5 7. Nb3 Be6 8. Be3 Be7 9. Qd2 O-O 10. O-O-O Nbd7 11. g4 b5 12. Rg1 Nb6 13. Na5 Rc8 14. g5 Nh5 15. Kb1 Qc7 16. Nd5 Nxd5 17. exd5 Bxd5 18. Qxd5 Qxa5 19. Bd3 g6 20. c4 Nf4 21. Bxf4 exf4 22. cxb5 axb5 23. Qxb5 Qa7 24. Be4 Rc7 25. Bd5 Qf2 26. Qb3 Qxh2 27. a4 Qf2 28. Rc1 Ra7 29. Qb4 Qe3 30. Rcd1 Qe5 31. Qb5 Kg7 32. Bc6 Rc8 33. Rg2 d5 34. Bxd5 Rc5 35. Qb3 Bxg5 36. Bc4 Bf6 37. Re2 Qf5+ 38. Re4 Re5 39. Re1 Rxe4 40. Rxe4 Re7 41. Bd3 Rxe4 42. Bxe4 Qd7 43. Qb5 Qxb5 44. axb5 Bd4 45. Kc2 h5 46. b6 Bxb6 47. Kd1 f5 48. Bc6 g5 49. Bd7 Kf6 50. Ke2 g4 51. Kf1 Kg5 0-1"
     player11 = "Caruana, Fabiano"
@@ -24,6 +25,8 @@ def add_existing_games():
     elo21 = 2757
     event1 = "Tashkent FIDE GP 2014"
     date1 = "2014-10-21"
+
+    db.session.execute("INSERT INTO moves (elo) VALUES (:pgn)", {"pgn":pgn1})
 
     sql1 = text("SELECT id FROM games WHERE elo1=:elo1 AND elo2=elo2")
     game_id1 = db.session.execute(sql1, {"elo1":elo11, "elo2":elo21})
@@ -39,10 +42,12 @@ def add_existing_games():
     event2 = "London Classic 4th"
     date2 = "2012-12-02"
 
+    db.session.execute("INSERT INTO moves (elo) VALUES (:pgn)", {"pgn":pgn2})
+
     sql2 = text("SELECT id FROM games WHERE elo1=:elo1 AND elo2=elo2")
     game_id2 = db.session.execute(sql2, {"elo1":elo12, "elo2":elo22})
 
     games.moves_to_db(game_id2, player12, player22)
     games.add_new_game(player12, player22, elo12, elo22, event2, date2)
 
-    db.session.commit()    
+    db.session.commit()

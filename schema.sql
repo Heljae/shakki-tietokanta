@@ -1,7 +1,7 @@
 CREATE TABLE games (
     id SERIAL PRIMARY KEY,
-    player1_id INTEGER REFERENCES players,
-    player2_id INTEGER REFERENCES players,
+    player1_id INTEGER,
+    player2_id INTEGER,
     elo1 INTEGER,
     elo2 INTEGER,
     event TEXT,

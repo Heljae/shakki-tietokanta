@@ -4,7 +4,10 @@ import games
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    result = games.count_all()
+    return render_template("index.html", games=result[0], 
+                           players=result[1],
+                           elo=result[2])
 
 @app.route("/new/<int:id>")
 def new(id):

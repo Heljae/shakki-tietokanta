@@ -1,6 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
 <body>
+  <div style="text-align: center;">
+    <span style="padding-left: 2em;">Pelejä: {{ games }}</span> 
+    <span style="padding-left: 2em;">Pelaajia: {{ players }}</span> 
+    <span style="padding-left: 2em;">Vahvuuslukujen keskiarvo: {{ elo }}</span>
+  </div>
   <h2>Tervetuloa käyttämään shakkitietokantaa!</h2>
   <p>
     Tietokantaan pystyt tallentamaan shakkipelejä merkkijonoina. 

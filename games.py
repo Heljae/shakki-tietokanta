@@ -130,3 +130,19 @@ def get_player_games(player_id):
     """
     games = game_manager.get_games_info(player_id)
     return games
+
+def count_all():
+    """Counts all games
+    """
+    sql = text("SELECT COUNT(DISTINCT id) \
+               FROM games")
+    games = db.session.execute(sql).fetchone()[0]
+
+    sql2 = text("SELECT COUNT(DISTINCT id) \
+                FROM players")
+    players = db.session.execute(sql2).fetchone()[0]
+
+    sql3 = text("SELECT SUM(elo)/COUNT(id) \
+                FROM players")
+    average = db.session.execute(sql3).fetchone()[0]
+    return games, players, average

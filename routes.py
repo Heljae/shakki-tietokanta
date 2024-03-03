@@ -1,9 +1,11 @@
 from app import app
 from flask import render_template, request, redirect
-import games
+import games, games_to_db
 
 @app.route("/")
 def index():
+    if games.get_all() == None:
+        games_to_db.add_existing_games()
     result = games.count_all()
     return render_template("index.html", games=result[0], 
                            players=result[1],

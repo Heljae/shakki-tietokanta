@@ -5,17 +5,17 @@
     Lisää pelin tiedot. ELO tarkoittaa vahvuuslukua.
   </p>
   <form action="/add/{{ game_id }}" method="post">
-    Valkeilla pelannut pelaaja: <input type="text" name="player1" required>
+    Valkeilla pelannut pelaaja: <input type="text" name="player1" required maxlength="30">
     <p>
-    Mustilla pelannut pelaaja: <input type="text" name="player2" required>
+    Mustilla pelannut pelaaja: <input type="text" name="player2" required maxlength="30">
     <p>
-    Valkeilla pelanneen vahvuusluku: <input type="text" name="elo1" required>
+    Valkeilla pelanneen vahvuusluku: <input type="number" name="elo1" required min="500" max="3500">
     <p>
-    Mustilla pelanneen vahvuusluku: <input type="text" name="elo2" required>
+    Mustilla pelanneen vahvuusluku: <input type="number" name="elo2" required min="500" max="3500">
     <p>
     Turnaus/tilaisuus: <input type="text" name="event" required>
     <p>
-    Päivämäärä: <input type="text" name="date" required>
+    Päivämäärä: <input type="date" name="date" required>
     <p>
     <input type="submit" value="Lähetä">
   </form>
